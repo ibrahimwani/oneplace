@@ -1,0 +1,55 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="registration.css" />
+    <title>Register</title>
+</head>
+<body>
+    <h1>Register</h1>
+    <form action="{{ url_for('register') }}" method="POST" class="form">
+
+            <div class="input-box">
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" required><br><br>
+            </div>
+           
+            <div class="input-box">
+                
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required><br><br>
+            </div>
+            <div class="column">
+                <div class="input-box">
+                    <input type="number" name="phone_number" id="phone_number" placeholder="Enter phone number" required />
+                </div>
+                <div class="input-box">
+                    <input type="date" name="birth_date" id="birth_date" required />
+                </div>
+            </div>
+            <div class="gender-box">
+                <h3>Gender</h3>
+                <div class="gender-option">
+                    <div class="gender">
+                        <input type="radio" id="check-male" name="gender" value="Male" checked />
+                        <label for="check-male">Male</label>
+                    </div>
+                    <div class="gender">
+                        <input type="radio" id="check-female" name="gender" value="Female" />
+                        <label for="check-female">Female</label>
+                    </div>
+                    <div class="gender">
+                        <input type="radio" id="check-other" name="gender" value="Other" />
+                        <label for="check-other">Prefer not to say</label>
+                    </div>
+                </div>
+            </div>
+    </section>
+        <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
+</body>
+</html>
