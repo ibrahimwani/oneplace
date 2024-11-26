@@ -69,6 +69,14 @@ body {
 .input-group input::placeholder {
     color: #aaa;
 }
+.select-box select {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    color: #707070;
+    font-size: 1rem;
+  }
 
 .login-button {
     width: 100%;
