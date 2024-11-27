@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 import pymongo
 import bcrypt
 
-app = Flask(__name__)  #for creating flask web server
+app = Flask(__name__, static_folder='static')  #for creating flask web server
 app.secret_key = "your_secret_key"  # Used for session and flashing messages
 
 # MongoDB connection
@@ -11,11 +11,9 @@ db = client["user_database"]  # Database name
 student_collection = db['student']  # Student collection
 teacher_collection = db['teacher']  # Teacher collection
 
-# Route for home page
 @app.route('/')
-def home():
-    return redirect(url_for('login'))
-
+def main():
+    return render_template('main.html') 
 # Route for registration page
 @app.route('/register', methods=['GET', 'POST'])
 def register():
